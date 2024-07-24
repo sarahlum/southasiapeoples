@@ -38,6 +38,7 @@ class ApiController extends Controller
                         $counts[$item['Ctry']]++;
                     }
                 }
+                $counts["raw_data"] = $data;
 
                 return response()->json(['counts' => $counts]);
             } else {

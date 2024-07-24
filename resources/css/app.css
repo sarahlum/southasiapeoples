@@ -1,3 +1,454 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* General Styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+    color: #333;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: rgba(0, 123, 255, 0.9);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffdf00;
+}
+
+nav input[type="text"] {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.autocomplete-suggestions {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1001;
+    display: none;
+}
+
+.autocomplete-suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-suggestions div:hover {
+    background: #f0f0f0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 100px auto 40px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.intro {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.intro h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.search-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.search-box input[type="text"]:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.or-text {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #666;
+}
+
+.country-select h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.country-flags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flag {
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.flag img {
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flag p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.flag::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.flag:hover {
+    transform: translateY(-5px);
+}
+
+.flag:hover::after {
+    opacity: 1;
+}
+
+.flag:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel {
+    margin: 50px 0;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 300px;
+    margin: 0 10px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
+.more-info {
+    margin: 50px 0;
+}
+
+.info-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map {
+    margin: 50px 0;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.statistics {
+    margin: 50px 0;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.stat-item {
+    background: #007BFF;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials {
+    margin: 50px 0;
+}
+
+.testimonial-item {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact {
+    margin: 50px 0;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact input, .contact textarea {
+    width: 80%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact button:hover {
+    background: #0056b3;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 123, 255, 0.8);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+footer {
+    background: #007BFF;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links, .social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links a, .social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover, .social-media a:hover {
+    color: #ffdf00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    nav input[type="text"] {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .search-box input[type="text"] {
+        width: 100%;
+    }
+
+    .country-flags {
+        flex-direction: column;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    nav input[type="text"] {
+        font-size: 14px;
+    }
+
+    .search-box input[type="text"] {
+        font-size: 14px;
+    }
+
+    .intro h2 {
+        font-size: 20px;
+    }
+
+    .or-text {
+        font-size: 16px;
+    }
+
+    .country-select h3 {
+        font-size: 18px;
+    }
+
+    .flag img {
+        width: 80px;
+        height: 50px;
+    }
+
+    .flag p {
+        font-size: 14px;
+    }
+
+    .carousel-item {
+        min-width: 200px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+
