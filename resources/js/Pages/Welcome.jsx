@@ -91,7 +91,7 @@ export default function Welcome() {
                         <div class="country-flags">
                             <div class="flag" id="india">
                                 <img src={indiaFlag} alt="India"/>
-                                <p>India</p>
+                                <p>India - {counts["India"]}</p>
                             </div>
                             <div class="flag" id="china">
                                 <img src={chinaFlag} alt="China"/>
