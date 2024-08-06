@@ -17,7 +17,6 @@ Route::get('/', function () {
 });
 
 // Happy page route
-/*
 Route::get('/', function () {
     return Inertia::render('Happy', [
         'canLogin' => Route::has('login'),
@@ -26,7 +25,6 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-*/
 
 // Dashboard route with authentication and verification middleware
 Route::get('/dashboard', function () {

@@ -1,8 +1,9 @@
 import { Head } from '@inertiajs/react';
 import React, { useState, useEffect } from 'react';
+import indiaFlag from '../../media/india-flag.webp';
 
 export default function Happy() {
-    const [data, setData] = useState({ counts: {}, populations: {} }); // State to hold counts and populations for each country
+    const [data, setData] = useState({ counts: {}, populations: {} });
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -42,10 +43,10 @@ export default function Happy() {
     }
 
     return (
-        <> 
-            <Head title="Happy"/>
-            <link rel="stylesheet" href="styles.css"></link>
-           
+        <>
+            <Head title="Happy" />
+            <link rel="stylesheet" href="styles.css" />
+
             <header>
                 <div className="header-container">
                     <h1>South Asia Peoples</h1>
@@ -54,28 +55,28 @@ export default function Happy() {
                         <a href="#">LISTINGS</a>
                         <a href="#">HELP</a>
                         <a href="#">FEEDBACK</a>
-                        <input type="text" placeholder="Search Text" id="searchInput"/>
+                        <input type="text" placeholder="Search Text" id="searchInput" />
                         <div className="autocomplete-suggestions" id="autocompleteSuggestions"></div>
                     </nav>
                 </div>
             </header>
 
             <main className="content-container">
-                <div className="info-box">
-                    <h2>Population</h2>
-                    <p>{data.populations.total}</p>
+                <div>
+                    <h1 className="big-title">India</h1>
+                    <img src={indiaFlag} alt="India Flag" className="india-flag" />
                 </div>
                 <div className="info-box">
-                    <h2>Population Unreached</h2>
-                    <p>{data.populations.unreached}</p>
+                    <h2>Population: 1,442,981,515</h2>
                 </div>
                 <div className="info-box">
-                    <h2>People Groups</h2>
-                    <p>{data.counts.total}</p>
+                    <h2>Population Unreached: {data.populations.India}</h2>
                 </div>
                 <div className="info-box">
-                    <h2>Unreached People Groups</h2>
-                    <p>{data.counts.unreached}</p>
+                    <h2>People Groups: 2,272</h2>
+                </div>
+                <div className="info-box">
+                    <h2>Unreached People Groups: {data.counts.India}</h2>
                 </div>
             </main>
 

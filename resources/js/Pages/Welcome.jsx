@@ -7,9 +7,6 @@ import singaporeFlag from '../../media/singapore-flag.webp';
 import thailandFlag from '../../media/thailand-flag.webp';
 import malaysiaFlag from '../../media/malaysia-flag.webp';
 
-//used to be line 95
-//<p>{flag.name} - Groups: {data.counts[flag.code]} - Population: {data.populations[flag.code]}</p>
-
 export default function Welcome() {
     const [data, setData] = useState({ counts: {}, populations: {} }); // State to hold counts and populations for each country
     const [loading, setLoading] = useState(true);

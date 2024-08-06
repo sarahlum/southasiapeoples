@@ -93,6 +93,7 @@ main {
 .intro {
     background: rgba(255, 255, 255, 0.8);
     padding: 40px 20px;
+     padding-top: 80px; /* Adjust this value as needed */
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
@@ -360,6 +361,22 @@ footer {
 
 .footer-links a:hover, .social-media a:hover {
     color: #ffdf00;
+}
+
+.big-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.india-flag {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Responsive Design */
