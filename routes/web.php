@@ -16,6 +16,18 @@ Route::get('/', function () {
     ]);
 });
 
+// Happy page route
+/*
+Route::get('/', function () {
+    return Inertia::render('Happy', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+*/
+
 // Dashboard route with authentication and verification middleware
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

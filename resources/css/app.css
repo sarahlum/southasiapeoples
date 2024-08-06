@@ -449,6 +449,33 @@ footer {
     .footer-container {
         flex-direction: column;
     }
+
+    .header-container, .footer-container {
+        background-color: blue;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 80vh;
+        background-color: #f0f0f0;
+        padding: 20px;
+    }
+    
+    .info-box {
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 10px;
+        width: 200px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 }
 
 
